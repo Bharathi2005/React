@@ -1,21 +1,24 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/home";
-const App=() => {
-    
-
-    const Name="BHARATHI"
-    const Meeee="lncewibvowebvoewbvo"
-    return(
+import Navbar from "./components/Navbar"
+import Profile from "./pages/Profile"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Projects from "./pages/Projects"
+import Contact from "./pages/Contact"
+import WebLayout from "./layouts/WebLayout"
+const App = () => {
+    return (
         <>
-            <div className="h-screen w-screen flex flex-col justify-start items-center font-extrabold">
-                <Navbar Name={Name}/>
-                
-            </div>
-            <div className="h-[10%] w-screen "> 
-                <Home Meeee={Meeee}/>
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<WebLayout />}>
+                        <Route path="/" element={<Profile />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/contact" element={<Contact />} />
+                    </Route>
+                </Routes>
+
+            </BrowserRouter>
         </>
     )
 }
-export default App;
+
+export default App
