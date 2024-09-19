@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin:0px;
-    padding:0px;
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.active{
+    background-color: #f5a34b;
+    color: white;
+    /* padding: 0.1rem; */
+    border-radius: 5px;
+    
 }
